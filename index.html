@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'main-bg': '#412E27',
+              'header-bg': '#31231D',
+              'text-beige': '#EDE1D1',
+              'brown-medium': '#7F6044',
+              'green-olive': '#707638',
+              'green-active': '#929939',
+              'brown-light': '#CCB89D',
+              'button-border': '#1B0303',
+              'green-download': '#46773D',
+            },
+            fontFamily: {
+              itim: ['Itim', 'cursive'],
+              'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+            },
+            boxShadow: {
+              'custom': '4px 4px 0px #2A1F1B',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
