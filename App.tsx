@@ -96,10 +96,10 @@ const App: React.FC = () => {
           </div>
         ) : (
           <div>
-            <div id="about" ref={aboutRef} className="py-24 lg:py-32 flex items-center justify-center scroll-mt-28">
+            <div id="about" ref={aboutRef} className="py-12 md:py-24 flex items-center justify-center scroll-mt-28">
               <AboutSection language={language} content={CONTENT.about} headerContent={CONTENT.header} />
             </div>
-            <div id="works" ref={worksRef} className="py-24 lg:py-32 flex flex-col justify-center scroll-mt-28">
+            <div id="works" ref={worksRef} className="py-12 md:py-24 flex flex-col justify-center scroll-mt-28">
               <WorksSection 
                 language={language} 
                 projects={PROJECTS} 
@@ -107,7 +107,7 @@ const App: React.FC = () => {
                 headerContent={CONTENT.header}
               />
             </div>
-            <div id="contacts" ref={contactsRef} className="py-24 lg:py-32 flex items-center justify-center scroll-mt-40">
+            <div id="contacts" ref={contactsRef} className="py-12 md:py-24 flex items-center justify-center scroll-mt-40">
               <ContactsSection language={language} content={CONTENT.contacts} headerContent={CONTENT.header} />
             </div>
           </div>

@@ -78,7 +78,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
 
   return (
     <div className="animate-fade-in">
-      <h2 className="text-5xl font-bold font-itim text-left mb-12">{project.name[language]}</h2>
+      <h2 className="text-4xl sm:text-5xl font-bold font-itim text-left mb-12">{project.name[language]}</h2>
       
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Left Column */}
@@ -155,9 +155,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
             </button>
           </div>
 
-          <div className="flex items-stretch gap-4 lg:w-5/12 w-full">
+          <div className="flex flex-col lg:flex-row items-stretch gap-4 lg:w-5/12 w-full">
               {project.githubUrl && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex justify-center items-center gap-3 bg-brown-medium text-text-beige px-4 py-2 rounded-lg font-itim text-lg hover:bg-green-olive/80 transition-colors border-2 border-button-border shadow-custom">
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex justify-center items-center gap-3 bg-brown-medium text-text-beige px-4 py-2 rounded-lg font-itim text-lg hover:bg-green-olive/80 transition-colors border-2 border-button-border shadow-custom min-w-0">
                      <div className="bg-black/50 rounded-full p-1">
                        <GithubIcon className="w-6 h-6 text-text-beige"/>
                      </div>

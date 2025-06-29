@@ -20,9 +20,9 @@ const WorksSection: React.FC<WorksSectionProps> = ({ language, projects, onSelec
           <div 
             key={project.id}
             onClick={() => onSelectProject(project)}
-            className="flex h-40 rounded-lg shadow-custom cursor-pointer hover:-translate-y-1 transition-transform duration-300 overflow-hidden group"
+            className="flex h-32 md:h-40 rounded-lg shadow-custom cursor-pointer hover:-translate-y-1 transition-transform duration-300 overflow-hidden group"
           >
-            <div className="w-40 bg-brown-light flex-shrink-0">
+            <div className="w-32 md:w-40 bg-brown-light flex-shrink-0">
               {/* Placeholder for project icon, user can replace the src in constants.ts */}
               <img 
                 src={project.logoUrl || `https://placekitten.com/160/160`} 
@@ -30,8 +30,8 @@ const WorksSection: React.FC<WorksSectionProps> = ({ language, projects, onSelec
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="bg-brown-medium p-6 flex flex-col flex-grow group-hover:bg-green-olive/30 transition-colors duration-300">
-              <h3 className="text-2xl font-bold font-itim mb-2">{project.name[language]}</h3>
+            <div className="bg-brown-medium p-4 md:p-6 flex flex-col flex-grow group-hover:bg-green-olive/30 transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-bold font-itim mb-2">{project.name[language]}</h3>
               <p className="text-text-beige/80 line-clamp-2">
                 {project.shortDescription[language]}
               </p>
