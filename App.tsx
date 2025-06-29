@@ -107,7 +107,7 @@ const App: React.FC = () => {
                 headerContent={CONTENT.header}
               />
             </div>
-            <div id="contacts" ref={contactsRef} className="py-12 md:py-24 flex items-center justify-center scroll-mt-40">
+            <div id="contacts" ref={contactsRef} className="pt-12 md:pt-24 pb-48 md:pb-64 flex items-center justify-center scroll-mt-100">
               <ContactsSection language={language} content={CONTENT.contacts} headerContent={CONTENT.header} />
             </div>
           </div>
