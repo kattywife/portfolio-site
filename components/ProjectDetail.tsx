@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Language, Project } from '../types';
 import GithubIcon from './icons/GithubIcon';
 import ChevronDownIcon from './icons/ChevronDownIcon';
+import CheckIcon from './icons/CheckIcon';
 
 interface ProjectDetailProps {
   project: Project;
@@ -16,9 +17,9 @@ interface ProjectDetailProps {
     additionalInfo: { [key in Language]: string };
     gallery: { [key in Language]: string };
     back: { [key in Language]: string };
-    githubLink: { [key in Language]: string };
     download: { [key in Language]: string };
     visitSite: { [key in Language]: string };
+    copied: { [key in Language]: string };
   }
 }
 
@@ -51,6 +52,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
       : `https://placekitten.com/600/400`
   );
   const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -63,6 +65,21 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
       window.removeEventListener('keydown', handleEsc);
     };
   }, []);
+  
+  const handleCopyClick = () => {
+    if (!project.githubUrl) return;
+
+    const fullUrl = project.githubUrl.startsWith('http') 
+      ? project.githubUrl 
+      : `https://github.com/${project.githubUrl}`;
+
+    navigator.clipboard.writeText(fullUrl).then(() => {
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    });
+  };
 
   const fallbackImageUrl = `https://placekitten.com/600/400`;
 
@@ -86,27 +103,27 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
             <div className="space-y-6">
                 <div className="bg-brown-medium p-6 rounded-lg shadow-custom">
                     <h3 className="font-itim text-xl font-bold mb-2">{content.description[language]}</h3>
-                    <p className="text-text-beige/90">{project.fullDescription[language]}</p>
+                    <p className="text-text-beige/90 whitespace-pre-line">{project.fullDescription[language]}</p>
                 </div>
 
                 <div className="space-y-3">
                     <AccordionItem title={content.keyFeatures[language]}>
-                        <ul className="list-disc list-inside text-text-beige/90">
+                        <ul className="list-disc list-inside text-text-beige/90 space-y-1">
                             {project.keyFeatures[language].map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </AccordionItem>
                     <AccordionItem title={content.techStack[language]}>
-                        <ul className="list-disc list-inside text-text-beige/90">
+                        <ul className="list-disc list-inside text-text-beige/90 space-y-1">
                             {project.techStack[language].map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </AccordionItem>
                     <AccordionItem title={content.team[language]}>
-                        <ul className="list-disc list-inside text-text-beige/90">
+                        <ul className="list-disc list-inside text-text-beige/90 space-y-1">
                             {project.team[language].map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </AccordionItem>
                     <AccordionItem title={content.additionalInfo[language]}>
-                        <ul className="list-disc list-inside text-text-beige/90">
+                        <ul className="list-disc list-inside text-text-beige/90 space-y-1">
                             {project.additionalInfo[language].map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </AccordionItem>
@@ -157,12 +174,25 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack, language
 
           <div className="flex flex-col lg:flex-row items-stretch gap-4 lg:w-5/12 w-full">
               {project.githubUrl && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex justify-center items-center gap-3 bg-brown-medium text-text-beige px-4 py-2 rounded-lg font-itim text-lg hover:bg-green-olive/80 transition-colors border-2 border-button-border shadow-custom min-w-0">
-                     <div className="bg-black/50 rounded-full p-1">
-                       <GithubIcon className="w-6 h-6 text-text-beige"/>
-                     </div>
-                     <span className="truncate">{project.githubUrl.replace(/^https?:\/\//, '')}</span>
-                  </a>
+                  <button
+                      onClick={handleCopyClick}
+                      disabled={isCopied}
+                      className="flex-1 flex justify-center items-center gap-3 bg-brown-medium text-text-beige px-4 py-2 rounded-lg font-itim text-lg hover:bg-green-olive/80 transition-colors border-2 border-button-border shadow-custom min-w-0 disabled:opacity-75 disabled:cursor-not-allowed"
+                  >
+                     {isCopied ? (
+                       <>
+                         <CheckIcon className="w-6 h-6 text-green-active"/>
+                         <span>{content.copied[language]}</span>
+                       </>
+                     ) : (
+                       <>
+                         <div className="bg-black/50 rounded-full p-1">
+                           <GithubIcon className="w-6 h-6 text-text-beige"/>
+                         </div>
+                         <span className="truncate">{project.githubUrl.replace(/^https?:\/\//, '')}</span>
+                       </>
+                     )}
+                  </button>
               )}
               {project.downloadUrl ? (
                   <a href={project.downloadUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex justify-center items-center bg-green-download text-text-beige px-6 py-2 rounded-lg font-itim text-lg hover:bg-opacity-80 transition-colors border-2 border-button-border shadow-custom">

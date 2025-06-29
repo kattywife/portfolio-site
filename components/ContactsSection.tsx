@@ -43,7 +43,7 @@ const ContactsSection: React.FC<ContactsSectionProps> = ({ language, content, he
   ];
   
   // Placeholder image, user can replace this URL with their own, preferably a PNG.
-  const catImageUrl = "https://i.imgur.com/TOUKSEo.png";
+  const catImageUrl = "https://placekitten.com/500/500";
 
 
   return (

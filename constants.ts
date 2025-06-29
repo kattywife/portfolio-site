@@ -1,11 +1,10 @@
-
 import { Project, Language } from './types';
 
 export const PROJECTS: Project[] = [
   {
   id: 1,
   name: {
-    EN: 'Students vs. Misfortunes',
+    EN: 'Students VS Misadventures',
     RU: 'Студенты против Злоключений'
   },
   shortDescription: {
@@ -62,12 +61,10 @@ export const PROJECTS: Project[] = [
       'Игру можно скачать по кнопке справа. Файл проверен и полностью безопасен.'
     ]
   },
-  // !!! НЕ ЗАБУДЬТЕ ЗАМЕНИТЬ ЭТИ ССЫЛКИ НА СВОИ !!!
   githubUrl: 'kattywife/Students-VS-Misadventures',
-  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.0/StudentsVSMisadventures.exe', // Ссылка на архив или exe-файл для скачивания
+  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.0/StudentsVSMisadventures.exe',
   logoUrl: `https://i.imgur.com/pe4DL4d.png`,
   imageUrls: [
-    // Здесь должны быть ссылки на скриншоты вашей игры
     `https://i.imgur.com/UnQALQZ.jpeg`,
     `https://i.imgur.com/CVeTuof.jpeg`,
     `https://i.imgur.com/nR4rxdQ.jpeg`,
@@ -170,43 +167,6 @@ export const PROJECTS: Project[] = [
     'https://i.imgur.com/NhNwFDO.jpeg',
   ]
   },
-  // {
-  //   id: 3,
-  //   name: { EN: 'Tool Gamma', RU: 'Инструмент Гамма' },
-  //   shortDescription: { EN: 'A data visualization dashboard for analyzing complex datasets.', RU: 'Панель визуализации данных для анализа сложных наборов данных.' },
-  //   fullDescription: { EN: 'Tool Gamma helps researchers and analysts to uncover insights from large datasets through interactive charts and graphs. Performance was key.', RU: 'Инструмент Гамма помогает исследователям и аналитикам извлекать ценную информацию из больших наборов данных с помощью интерактивных диаграмм и графиков. Ключевым фактором была производительность.' },
-  //   keyFeatures: { EN: ['Dynamic Charting', 'Data Filtering', 'CSV Export'], RU: ['Динамические графики', 'Фильтрация данных', 'Экспорт в CSV'] },
-  //   techStack: { EN: ['D3.js', 'React', 'Redux', 'Python (Flask)'], RU: ['D3.js', 'React', 'Redux', 'Python (Flask)'] },
-  //   team: { EN: ['Frontend Developer (Me)', 'Backend Developer', 'Data Scientist'], RU: ['Фронтенд-разработчик (Я)', 'Бэкенд-разработчик', 'Специалист по данным'] },
-  //   additionalInfo: { EN: ['High performance data rendering'], RU: ['Высокопроизводительный рендеринг данных'] },
-  //   githubUrl: 'https://github.com',
-  //   downloadUrl: '#',
-  //  logoUrl: `https://placekitten.com/162/160`,
-  //   imageUrls: [
-  //     `https://placekitten.com/603/400`,
-  //     `https://placekitten.com/600/403`,
-  //     `https://placekitten.com/603/403`,
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   name: { EN: 'Platform Delta', RU: 'Платформа Дельта' },
-  //   shortDescription: { EN: 'An e-commerce solution with a custom content management system.', RU: 'Решение для электронной коммерции с настраиваемой системой управления контентом.' },
-  //   fullDescription: { EN: 'Platform Delta is a bespoke e-commerce platform tailored for a specific niche market. It includes a custom CMS for easy product and content management.', RU: 'Платформа Дельта — это индивидуальная платформа электронной коммерции, разработанная для определенной ниши рынка. Она включает в себя настраиваемую CMS для удобного управления продуктами и контентом.' },
-  //   keyFeatures: { EN: ['Custom CMS', 'Payment Gateway Integration', 'Inventory Management'], RU: ['Кастомная CMS', 'Интеграция платежных шлюзов', 'Управление запасами'] },
-  //   techStack: { EN: ['Next.js', 'GraphQL', 'TypeScript', 'Stripe'], RU: ['Next.js', 'GraphQL', 'TypeScript', 'Stripe'] },
-  //   team: { EN: ['Full-Stack Developer (Me)'], RU: ['Full-Stack разработчик (Я)'] },
-  //   additionalInfo: { EN: ['Headless CMS architecture'], RU: ['Архитектура Headless CMS'] },
-  //   githubUrl: 'https://github.com',
-  //   websiteUrl: '#',
-  //   imageUrls: [
-  //     `https://placekitten.com/600/404`,
-  //     `https://placekitten.com/604/400`,
-  //     `https://placekitten.com/604/404`,
-  //     `https://placekitten.com/605/400`,
-  //     `https://placekitten.com/600/405`,
-  //   ],
-  // },
 ];
 
 export const CONTENT = {
@@ -238,9 +198,9 @@ export const CONTENT = {
     additionalInfo: { EN: 'Additional Info', RU: 'Дополнительно' },
     gallery: { EN: 'gallery here', RU: 'это галерея' },
     back: { EN: 'Back', RU: 'Назад' },
-    githubLink: { EN: 'Link to Github', RU: 'Ссылка на гитхаб' },
     download: { EN: 'Download', RU: 'Download' },
     visitSite: { EN: 'Visit Site', RU: 'Перейти на сайт' },
+    copied: { EN: 'Copied!', RU: 'Скопировано!' },
   },
   footer: {
     name: { EN: 'Kirichenko Dana', RU: 'Kirichenko Dana' },

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 
@@ -35,12 +34,13 @@ const Header: React.FC<HeaderProps> = ({ language, setLanguage, activeSection, o
     setLanguage(language === 'EN' ? 'RU' : 'EN');
   };
 
-  const buttonBaseClasses = "px-3 py-1 rounded-lg font-itim text-xs sm:px-4 sm:py-2 sm:text-sm transition-colors duration-300 border-2 border-button-border shadow-custom whitespace-nowrap";
+  // Responsive button classes: smaller on mobile to prevent overflow.
+  const buttonBaseClasses = "py-2 rounded-lg font-itim transition-colors duration-300 border-2 border-button-border shadow-custom whitespace-nowrap px-2 text-xs md:px-4 md:text-sm";
 
   return (
     <header className={`sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-header-bg/95 backdrop-blur-sm' : 'bg-header-bg'}`}>
       <div className="container mx-auto px-4 md:px-8 py-6 flex justify-between items-center">
-        <nav className="flex items-center gap-2 sm:gap-4">
+        <nav className="flex items-center gap-2 md:gap-4">
           {navItems.map(item => (
             <button
               key={item.id}
