@@ -61,10 +61,12 @@ export const PROJECTS: Project[] = [
       'Игру можно скачать по кнопке справа. Файл проверен и полностью безопасен.'
     ]
   },
+  // !!! НЕ ЗАБУДЬТЕ ЗАМЕНИТЬ ЭТИ ССЫЛКИ НА СВОИ !!!
   githubUrl: 'kattywife/Students-VS-Misadventures',
-  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.0/StudentsVSMisadventures.exe',
+  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.0/StudentsVSMisadventures.exe', // Ссылка на архив или exe-файл для скачивания
   logoUrl: `https://i.imgur.com/pe4DL4d.png`,
   imageUrls: [
+    // Здесь должны быть ссылки на скриншоты вашей игры
     `https://i.imgur.com/UnQALQZ.jpeg`,
     `https://i.imgur.com/CVeTuof.jpeg`,
     `https://i.imgur.com/nR4rxdQ.jpeg`,
@@ -186,9 +188,10 @@ export const CONTENT = {
     telegram: { EN: 'Telegram', RU: 'Telegram' },
     email: { EN: 'E-mail', RU: 'E-mail' },
     github: { EN: 'Github', RU: 'Github' },
-    telegramUser: { EN: '@asmodeykaa', RU: '@asmodeykaa'},
+    telegramUser: { EN: 'asmodeykaa', RU: 'asmodeykaa'},
     emailAddress: { EN: 'dkzlatoust@gmail.com', RU: 'dkzlatoust@gmail.com' },
-    githubUrl: { EN: 'https://github.com/kattywife', RU: 'https://github.com/kattywife' }
+    githubUrl: { EN: 'https://github.com/kattywife', RU: 'https://github.com/kattywife' },
+    copied: { EN: 'Copied!', RU: 'Скопировано!' },
   },
   projectDetail: {
     description: { EN: 'Description:', RU: 'Описание:' },
