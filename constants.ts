@@ -55,15 +55,15 @@ export const PROJECTS: Project[] = [
   },
   additionalInfo: {
     EN: [
-      'You can download the game using the button on the right. The file is checked and completely safe.'
+      'You can download the archive with the game by clicking the button on the right/below. The file is verified and completely safe.'
     ],
     RU: [
-      'Игру можно скачать по кнопке справа. Файл проверен и полностью безопасен.'
+      'Вы можете скачать архив с игрой по кнопке справа/снизу. Файл проверен и полностью безопасен.'
     ]
   },
   // !!! НЕ ЗАБУДЬТЕ ЗАМЕНИТЬ ЭТИ ССЫЛКИ НА СВОИ !!!
   githubUrl: 'kattywife/Students-VS-Misadventures',
-  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.0/StudentsVSMisadventures.exe', // Ссылка на архив или exe-файл для скачивания
+  downloadUrl: 'https://github.com/kattywife/Students-VS-Misadventures/releases/download/v1.1/StudentsVSMisadventures.rar', // Ссылка на архив или exe-файл для скачивания
   logoUrl: `https://i.imgur.com/pe4DL4d.png`,
   imageUrls: [
     // Здесь должны быть ссылки на скриншоты вашей игры
